@@ -1,0 +1,29 @@
+@baseUrl = http://localhost:3000
+
+### Login the admin user
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+
+### Create the admin user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+### Create user
+POST {{baseUrl}}/auths/register
+Content-Type: application/json
+
+{
+    "username":"haj",
+    "password":"test"
+}

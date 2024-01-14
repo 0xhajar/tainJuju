@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:3000
+### READ ALL POSTS
+GET {{baseUrl}}/posts
+
+### Create a post
+POST {{baseUrl}}/posts/createPost
+Content-Type: application/json
+
+{
+    "message":"salut je suis nouveau"
+}
+
+### Update a post
+PATCH {{baseUrl}}/posts/updatePost
+Content-Type: application/json
+
+{
+    "id" : "05038756-a2c0-4ab9-9af1-fa624eb49810",
+    "message":"salut je suis pas nouvelle"
+}
+
+### Delete a post
+DELETE {{baseUrl}}/posts/deletePost
+Content-Type: application/json
+
+{
+    "id" : "05038756-a2c0-4ab9-9af1-fa624eb49810"
+}
