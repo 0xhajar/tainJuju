@@ -2,6 +2,16 @@
 ### READ ALL POSTS
 GET {{baseUrl}}/posts
 
+### Login the admin user
+# @name admin
+POST {{baseUrl}}/auths/login
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
 ### Create a post
 POST {{baseUrl}}/posts/createPost
 Content-Type: application/json
@@ -25,4 +35,13 @@ Content-Type: application/json
 
 {
     "id" : "05038756-a2c0-4ab9-9af1-fa624eb49810"
+}
+
+### Login the admin user
+POST {{baseUrl}}/test/bonjour
+Content-Type: application/json
+Authorization: {{admin.response.body.token}}
+
+{
+
 }
