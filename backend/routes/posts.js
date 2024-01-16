@@ -21,8 +21,8 @@ router.post('/createPost', authorize, isAdmin, (req, res) => {
   return res.json(createdPost);
 });
 
-router.patch('/updatePost', authorize, isAdmin, (req, res) => {
-  const id = req?.body?.id;
+router.patch('/updatePost/:id', authorize, isAdmin, (req, res) => {
+  const id = req?.params?.id;
   const message = req?.body?.message;
 
   if ((!id && !message) || id?.length === 0 || message?.length === 0) {
@@ -39,8 +39,8 @@ router.patch('/updatePost', authorize, isAdmin, (req, res) => {
   return res.json(updatedPost);
 });
 
-router.delete('/deletePost', authorize, isAdmin, (req, res) => {
-  const deletedPost = Post.deleteOnePost(req.body.id);
+router.delete('/deletePost/:id', authorize, isAdmin, (req, res) => {
+  const deletedPost = Post.deleteOnePost(req.params.id);
 
   if (!deletedPost) return res.sendStatus(404);
 
